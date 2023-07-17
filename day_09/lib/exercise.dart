@@ -18,7 +18,6 @@ class Cat {
       }
     }
     void move(x, y){
-
     }
   }
 
@@ -27,4 +26,6 @@ class Cat {
 void main(){
 final cat = Cat();
 cat.display();
+stdin.linemode = false;
+stdin.echomode= false;
 }
