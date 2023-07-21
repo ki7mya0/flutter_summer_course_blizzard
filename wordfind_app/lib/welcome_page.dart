@@ -23,11 +23,12 @@ class WelcomePage extends StatelessWidget {
           ],
         )
       ),
-      floatingActionButton: 
+      floatingActionButton:
       Container(
-        width: 310, height: 60,
+        width: 310,
+        height: 60,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [Color(0xFFE86B02),  Color(0xFFFA9541)
@@ -37,9 +38,18 @@ class WelcomePage extends StatelessWidget {
         ),
         child: ElevatedButton(
           onPressed: (){},
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent,), child: null,
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
+          child: const Text(
+            'PLAY',
+          style: TextStyle(fontFamily: 'Nunito', fontSize: 24,
+          fontWeight: FontWeight.w700,
+          ),
         ),
       ),
+      ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
