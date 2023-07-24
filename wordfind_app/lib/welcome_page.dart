@@ -13,27 +13,32 @@ class WelcomePage extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage('assets/images/back1.png'),
                 fit: BoxFit.cover)),
-        // child: Column(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [],
-        // ),
+        child:  Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(padding: EdgeInsets.only(top: 200)),
+            Expanded(
+                child: Column(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GradientLetter('W'),
+                    GradientLetter('O'),
+                    GradientLetter('R'),
+                    GradientLetter('D'),],
+                ),
+                SizedBox(
+                  height: 200,
+                  child: Image.asset('assets/images/iCodeGuy.png'),
+                ),
+                const GradientText('GAME', 31.6),],
+                )
+            ),
+            Expanded(child: GradientText('READY?', 25.0))
+          ],
+        ),
       ),
-      // const Center(
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         GradientText('Game', 35.6),
-      //         Row(mainAxisAlignment: MainAxisAlignment.center,children: [
-      //           GradientLetter('W'),
-      //           GradientLetter('O'),
-      //           GradientLetter('R'),
-      //           GradientLetter('D')
-      //         ],
-      //         )
-      //       ],
-      //     )
-      // )
-
       floatingActionButton: Container(
         width: 310,
         height: 60,
