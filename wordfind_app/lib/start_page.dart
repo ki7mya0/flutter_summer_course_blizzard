@@ -9,8 +9,12 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-          ),
-    ));
+            body: Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/back1.png'), fit: BoxFit.cover)),
+    )
+        )
+    );
   }
 }
