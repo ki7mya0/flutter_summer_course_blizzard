@@ -13,28 +13,32 @@ class WelcomePage extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage('assets/images/back1.png'),
                 fit: BoxFit.cover)),
-        child:  Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Padding(padding: EdgeInsets.only(top: 250)),
             Expanded(
                 child: Column(
               children: [
+                const SizedBox(
+                  width: 140,
+                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientLetter('W'),
                     GradientLetter('O'),
                     GradientLetter('R'),
-                    GradientLetter('D'),],
+                    GradientLetter('D'),
+                  ],
                 ),
+                const GradientText('GAME', 31.6),
                 SizedBox(
-                  height: 180,
+                  width: 150,
                   child: Image.asset('assets/images/iCodeGuy.png'),
                 ),
-                const GradientText('GAME', 31.6),],
-                )
-            ),
+              ],
+            )),
             const Expanded(child: GradientText('READY?', 25.0))
           ],
         ),

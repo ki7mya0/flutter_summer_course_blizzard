@@ -7,14 +7,23 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            body: Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/back1.png'), fit: BoxFit.cover)),
-    )
-        )
+    return Scaffold(
+      backgroundColor: Color(0xFFFBF5F2),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Image.asset('assets/images/arrow_back.png'),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: SizedBox(
+          height: 50.0,
+          child: Image.asset(''),
+        ),
+      ),
     );
   }
 }

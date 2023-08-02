@@ -6,6 +6,6 @@ void main() {
   MaterialApp wordFindGame = MaterialApp(
     title: 'Word Find Game',
     theme: ThemeData(fontFamily: 'Ribeye'),
-    home: const StartPage());
+    home: const WelcomePage());
   runApp(wordFindGame);
 }
