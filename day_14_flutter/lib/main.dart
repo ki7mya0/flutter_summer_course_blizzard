@@ -1,4 +1,4 @@
-import 'package:day_14_flutter/stop_watch.dart';
+import 'package:day_14_flutter/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,6 +16,6 @@ class StopWatchApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const StopWatch();
+    return const ProfileScreen();
   }
 }
