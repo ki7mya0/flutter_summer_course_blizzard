@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/Gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
+import 'package:wordfind_app/input_field.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -35,14 +36,17 @@ class StartPage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 50),
               ),
               Image.asset('assets/images/iCodeGuyHead.png'),
-              const Padding(
-                  padding: EdgeInsets.only(top: 20)
-              )
+              const Padding(padding: EdgeInsets.only(top: 20)),
+              const GradientText('Player Name', 20.0),
+              const SizedBox(
+                height: 20,
+              ),
+              const InputField()
             ],
           ),
         ),
       ),
-      floatingActionButton: StartButton('Start'),
+      floatingActionButton: const StartButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
@@ -57,30 +61,28 @@ class StartButton extends StatelessWidget {
       width: 310,
       height: 60,
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
-        ),
-        borderRadius: BorderRadius.circular(25)
-      ),
+          gradient: const LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
+          ),
+          borderRadius: BorderRadius.circular(25)),
       child: ElevatedButton(
-        onPressed: (){},
+        onPressed: () {
+
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25)
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         ),
-        child: const Text('START',
+        child: const Text(
+          'START',
           style: TextStyle(
-          fontFamily: 'Nunito',
-            fontSize: 24,
-            fontWeight: FontWeight.w700
-        ),),
+              fontFamily: 'Nunito', fontSize: 24, fontWeight: FontWeight.w700),
+        ),
       ),
     );
   }
 }
-
