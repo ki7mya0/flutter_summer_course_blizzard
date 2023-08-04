@@ -10,9 +10,9 @@ class TaskPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Image.asset('assets/images/arrow_back.png'),
-          onPressed: (
-
-              ) {},
+          onPressed: (){
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
