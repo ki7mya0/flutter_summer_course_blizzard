@@ -20,7 +20,9 @@ class _InputFieldState extends State<InputField> {
     void dispose() {
       _textEditingController.dispose();
       super.dispose();
-    };
+    }
+
+    ;
   }
 
   @override
@@ -48,7 +50,9 @@ class _InputFieldState extends State<InputField> {
             hintText: 'Your name',
             hintStyle: const TextStyle(color: Color(0xFFE86B02)),
             suffixIcon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _textEditingController.clear();
+                },
                 icon: const Icon(
                   Icons.clear,
                   color: Color(0xFFE86B02),

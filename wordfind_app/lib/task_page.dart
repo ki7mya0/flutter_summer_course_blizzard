@@ -83,6 +83,7 @@ class _TaskPageState extends State<TaskPage> {
 
  @override
   void initState() {
+    super.initState();
     listQuestions = questions;
     user = widget.user;
   }
@@ -101,8 +102,8 @@ class _TaskPageState extends State<TaskPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text( 'userName',
-            style: TextStyle(fontSize: 24, color: Color(0xFFE86B02))),
+        title: Text( user.userName,
+            style: const TextStyle(fontSize: 24, color: Color(0xFFE86B02))),
       ),
       body: SafeArea(
         child: Container(
