@@ -21,8 +21,6 @@ class _InputFieldState extends State<InputField> {
       _textEditingController.dispose();
       super.dispose();
     }
-
-    ;
   }
 
   @override

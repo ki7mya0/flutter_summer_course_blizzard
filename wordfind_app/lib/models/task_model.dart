@@ -34,7 +34,7 @@ class TaskModel {
     return answeredString == answer;
   }
 
-  clone() {
+  TaskModel clone() {
     return TaskModel(question: question, answer: answer, pathImage: pathImage);
   }
 }
