@@ -1,9 +1,9 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:lesson_20_flutter/pages/signup_screen.dart';
+import 'package:icodegram_app/pages/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:lesson_20_flutter/screens/login_screen.dart';
+import 'package:icodegram_app/screens/login.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

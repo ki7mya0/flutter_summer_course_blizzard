@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462884140437",
+    "project_id": "icodegram-kimya",
+    "storage_bucket": "icodegram-kimya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462884140437:android:ce320c128e3dcf7b18f29c",
+        "android_client_info": {
+          "package_name": "com.example.icodegram_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462884140437-s555enqln7epke1etoaobo66386r3ooa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCncqE-kCVWCZ53A5ezymftt4bHjLMKN6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462884140437-s555enqln7epke1etoaobo66386r3ooa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,12 +7,13 @@ class TextFieldInput extends StatelessWidget {
   final bool isPassword;
   final TextEditingController textEditingController;
   final TextInputType textInputType;
+  final TextStyle style;
 
   const TextFieldInput({
     super.key,
     required this.hintText,
     required this.isPassword, required this.textEditingController,
-    required this.textInputType
+    required this.textInputType, required this.style
   });
 
   @override

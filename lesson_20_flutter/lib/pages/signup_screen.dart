@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lesson_20_flutter/component/text_field.dart';
+import 'package:lesson_20_flutter/recources/auth_method.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -9,6 +10,20 @@ class SignUp extends StatefulWidget {
 }
 
 class SignUpState extends State<SignUp> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _rePasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _userNameController.dispose();
+    _passwordController.dispose();
+    _rePasswordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,47 +44,71 @@ class SignUpState extends State<SignUp> {
               const SizedBox(
                 height: 34,
               ),
-              const TextFieldInput(hintText: 'Phone number', isPassword: false),
+              TextFieldInput(
+                hintText: 'Email',
+                isPassword: false,
+                textEditingController: _emailController,
+                textInputType: TextInputType.emailAddress,
+              ),
               const SizedBox(
                 height: 24,
               ),
-              const TextFieldInput(hintText: 'User name', isPassword: false),
+              TextFieldInput(
+                hintText: 'User name',
+                isPassword: false,
+                textEditingController: _userNameController,
+                textInputType: TextInputType.text,
+              ),
               const SizedBox(
                 height: 24,
               ),
-              const TextFieldInput(hintText: 'Password', isPassword: true),
+              TextFieldInput(
+                hintText: 'Password',
+                isPassword: true,
+                textEditingController: _passwordController,
+                textInputType: TextInputType.text,
+              ),
               const SizedBox(
                 height: 24,
               ),
-              const TextFieldInput(
-                  hintText: 'Re-enter password', isPassword: true),
+              TextFieldInput(
+                hintText: 'Re-enter password',
+                isPassword: true,
+                textEditingController: _rePasswordController,
+                textInputType: TextInputType.text,
+              ),
               const SizedBox(
                 height: 24,
               ),
               Flexible(
-                child: Container(),
                 flex: 2,
+                child: Container(),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  AuthMethods().signUpUser(
+                      email: _emailController.text,
+                      username: _userNameController.text,
+                      password: _passwordController.text);
+                },
                 child: Container(
                   width: double.infinity,
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: const Text('Sign up'),
                   decoration: const ShapeDecoration(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(4)),
                       ),
                       color: Colors.blue),
+                  child: const Text('Sign up'),
                 ),
               ),
               const SizedBox(
                 height: 12,
               ),
               Flexible(
-                child: Container(),
                 flex: 2,
+                child: Container(),
               )
             ],
           ),
