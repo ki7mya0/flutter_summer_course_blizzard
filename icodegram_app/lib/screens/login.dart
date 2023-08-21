@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/component/text_field.dart';
+import 'package:icodegram_app/pages/sign_up.dart';
 import 'package:icodegram_app/resources/auth_method.dart';
 import 'package:icodegram_app/screens/home_screen.dart';
 
@@ -17,7 +18,7 @@ class LoginScreenState extends State<LoginScreen> {
 
   void loginUser() async {
     String result = await AuthMethods().loginUser(
-        phonenumber: _phonenumberController.text, password: _passwordController.text);
+        email: _phonenumberController.text, password: _passwordController.text);
     setState(() {
       _isLoading = true;
     });
@@ -121,26 +122,32 @@ class LoginScreenState extends State<LoginScreen> {
               ],
             ),
             const SizedBox(height: 35),
-            const Column(
+             Column(
               children: [
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Шинэ хэрэглэгч үү?',
                         style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
-                      Text('Бүртгүүлэх',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xFFE86B02)))
+                     InkWell(
+                       onTap: () {
+                         Navigator.push(
+                             context, MaterialPageRoute(builder: (context) => const SignUp()));
+                       } ,
+                       child:  const Text('Бүртгүүлэх',
+                           style: TextStyle(
+                               fontSize: 14,
+                               fontWeight: FontWeight.w400,
+                               color: Color(0xFFE86B02))),
+                     )
                     ],
                   ),
                 )

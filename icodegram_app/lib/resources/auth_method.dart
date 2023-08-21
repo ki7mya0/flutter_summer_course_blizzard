@@ -7,20 +7,20 @@ class AuthMethods {
 
   //sign up user
   Future<String> signUpUser({
-    required String phonenumber,
+    required String email,
     required String username,
     required String password,
   }) async {
     String result = 'Some error occurred';
     try {
-      if (phonenumber.isNotEmpty || password.isNotEmpty || username.isNotEmpty) {
+      if (email.isNotEmpty || password.isNotEmpty || username.isNotEmpty) {
         UserCredential credential = await _auth.createUserWithEmailAndPassword(
-            email: phonenumber, password: password);
+            email: email, password: password);
 
         _firestore.collection('users').doc(credential.user!.uid).set({
           'username': username,
           'uid': credential.user!.uid,
-          'email': phonenumber,
+          'email': email,
           'following': [],
           'followers': []
         });
@@ -35,14 +35,14 @@ class AuthMethods {
   }
 
   Future<String> loginUser({
-    required String phonenumber,
+    required String email,
     required String password,
   }) async {
     String result = 'Some error occurred';
     try {
-      if (phonenumber.isNotEmpty || password.isNotEmpty) {
+      if (email.isNotEmpty || password.isNotEmpty) {
         await _auth.signInWithEmailAndPassword(
-            email: phonenumber, password: password);
+            email: email, password: password);
         result = 'success';
       } else {
         result = 'Please enter all the fields';

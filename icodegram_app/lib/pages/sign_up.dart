@@ -11,7 +11,7 @@ class SignUp extends StatefulWidget {
 }
 
 class SignUpState extends State<SignUp> {
-  final TextEditingController _phonenumberController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _rePasswordController = TextEditingController();
@@ -20,15 +20,15 @@ class SignUpState extends State<SignUp> {
   @override
   void dispose() {
     super.dispose();
-    _phonenumberController.dispose();
+    _emailController.dispose();
     _userNameController.dispose();
     _passwordController.dispose();
     _rePasswordController.dispose();
   }
 
   void signUpUser() async {
-    String result = await AuthMethods().loginUser(
-        phonenumber: _phonenumberController.text, password: _passwordController.text);
+    String result = await AuthMethods().signUpUser(
+        email: _emailController.text, username: _userNameController.text, password: _passwordController.text);
     setState(() {
       _isLoading = true;
     });
@@ -71,9 +71,9 @@ class SignUpState extends State<SignUp> {
                 height: 35,
               ),
               TextFieldInput(
-                hintText: 'Утасны дугаар',
+                hintText: 'Цахим шуудан',
                 isPassword: false,
-                textEditingController: _phonenumberController,
+                textEditingController: _emailController,
                 textInputType: TextInputType.phone,
                 style: const TextStyle(fontSize: 15),
               ),
@@ -152,26 +152,32 @@ class SignUpState extends State<SignUp> {
                 ],
               ),
               const SizedBox(height: 35),
-              const Column(
+              Column(
                 children: [
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Бүртгэлтэй юу?',
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Text('Нэвтрэх',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xFFE86B02)))
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+                          },
+                          child: const Text('Нэвтрэх',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xFFE86B02))),
+                        )
                       ],
                     ),
                   )
