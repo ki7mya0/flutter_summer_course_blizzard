@@ -19,7 +19,7 @@ class WatchStoryState extends State<WatchStory> {
         height: 104,
         child: Column(
           children: [
-            SizedBox(height: 80, width: 80,
+            SizedBox(height: 70, width: 70,
               child: ClipOval(
                 child: Image.asset('assets/images/profile.png'),
               ),
@@ -30,7 +30,6 @@ class WatchStoryState extends State<WatchStory> {
             Text( widget.name )
           ],
         ),
-
       ),
     );
   }

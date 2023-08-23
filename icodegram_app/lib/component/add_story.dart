@@ -22,7 +22,7 @@ class _AddStoryState extends State<AddStory> {
                 width: 70,
                 height: 70,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  borderRadius: const BorderRadius.all(Radius.circular(50)),
                   border: Border.all(
                     color: Colors.white54,
                     width: 2
@@ -30,7 +30,7 @@ class _AddStoryState extends State<AddStory> {
                 ),
                 child: TextButton(
                   onPressed: (){},
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                       Icons.add,
                       color: Colors.white54,
@@ -39,6 +39,10 @@ class _AddStoryState extends State<AddStory> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Нэмэх'),
+              )
             ],
           ),
         ),
