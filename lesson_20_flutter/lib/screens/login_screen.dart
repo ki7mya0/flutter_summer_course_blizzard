@@ -1,6 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:lesson_20_flutter/component/text_field.dart';
-import 'package:lesson_20_flutter/recources/auth_method.dart';
+import 'package:lesson_20_flutter/resources/auth_method.dart';
 import 'package:lesson_20_flutter/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -26,6 +28,7 @@ class LoginScreenState extends State<LoginScreen> {
         _isLoading = false;
       });
 
+      // ignore: use_build_context_synchronously
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => HomeScreen()));
       print('Logged in');

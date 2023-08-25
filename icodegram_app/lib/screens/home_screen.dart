@@ -72,14 +72,13 @@ class HomeScreenState extends State<HomeScreen> {
               ),
               Flexible(
                   child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return  Container(
-                          child: Text('hi'),
-                        );
-                      }))
+                scrollDirection: Axis.horizontal,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 10,
+                itemBuilder: (context, index) => ListTile(
+                  title: Text('hi'),
+                ),
+              ))
             ],
           ),
         ),

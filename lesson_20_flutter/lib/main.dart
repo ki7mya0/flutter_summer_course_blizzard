@@ -10,6 +10,6 @@ void main() {
   Firebase.initializeApp();
 
   runApp(const MaterialApp(
-    home: LoginScreen(),
+    home: SignUp(),
   ));
 }
